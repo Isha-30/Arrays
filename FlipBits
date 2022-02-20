@@ -1,0 +1,22 @@
+public class Solution {
+	public static int flipBits(int[] arr,int n) {
+        int cursum=0;
+    int maxsum=0;
+
+    int count=0;
+    for(int i=0; i<n; i++) {
+        if(arr[i] == 1){
+            count++;
+            arr[i]=-1;
+        }else arr[i]=1;
+
+
+        cursum+=arr[i];
+        maxsum=Math.max(cursum, maxsum);
+        
+        if(cursum<0) cursum=0;
+    }
+    
+    return count+maxsum;
+	}
+}
